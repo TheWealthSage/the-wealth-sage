@@ -12,7 +12,60 @@ const qs=[
 ['You spent more than planned this month. What do you usually do?',['I assume the budget did not work and move on.','I try to make up for it next month.','I review what happened and adjust my plan.','I look for the root cause and change the system so the same mistake is harder to repeat.'],'system'],
 ['Which statement is closest to your definition of wealth?',['Being able to buy the things I want.','Having a good income and enough savings.','Being financially stable and having more choices in life.','Building a system of money, skills, and assets that gives me more choices over time.'],'growth']
 ];
-let i=0,answers=[];const q=document.getElementById('q'),a=document.getElementById('a'),next=document.getElementById('next'),count=document.getElementById('count');
-function render(){count.textContent=`Question ${i+1} of ${qs.length}`;q.textContent=qs[i][0];a.innerHTML='';qs[i][1].forEach((x,j)=>{const b=document.createElement('button');b.className='answer';b.textContent=x;b.type='button';if(answers[i]===j)b.classList.add('selected');b.onclick=()=>{answers[i]=j;document.querySelectorAll('.answer').forEach(v=>v.classList.remove('selected'));b.classList.add('selected');next.disabled=false};a.appendChild(b)});next.disabled=answers[i]===undefined;next.textContent=i===qs.length-1?'See my result':'Next →'}
-function result(){const s={management:0,protection:0,growth:0,system:0},c={management:0,protection:0,growth:0,system:0};answers.forEach((v,n)=>{const k=qs[n][2];s[k]+=v+1;c[k]++});const d={};Object.keys(s).forEach(k=>d[k]=Math.round(s[k]/(c[k]*4)*100));const overall=Math.round(Object.values(d).reduce((x,y)=>x+y,0)/4);const profiles=overall<20?['Starter','You have a clear opportunity to build a stronger financial foundation. Focus first on stability, then build a simple system you can repeat.','Start by reviewing your spending and building an emergency buffer.']:overall<40?['Stabilizer','You have a useful foundation, but parts of your financial system need more stability and clarity.','Turn your financial goals into automatic rules instead of relying on monthly decisions.']:overall<60?['Organizer','You think in an organized way and already have several useful financial habits. Your next step is turning that organization into long-term growth.','Focus on increasing your income and gradually building assets.']:overall<80?['Builder','You have moved beyond many financial basics and are starting to think about money as a system for growth, not just spending.','Build a clear strategy around assets, skills, and income sources.']:['Wealth Builder','You have a long-term view and a relatively integrated financial system. Consistency and risk management now matter more than chasing quick solutions.','Keep your systems strong, review them regularly, and let compounding work in your favor.'];const labels={management:'Money Management',protection:'Financial Protection',growth:'Wealth Building',system:'System Strength'};const e=Object.entries(d).sort((x,y)=>y[1]-x[1]);document.getElementById('quiz').style.display='none';document.getElementById('result').style.display='block';document.getElementById('score').textContent=overall+'/100';document.getElementById('profile').textContent=profiles[0];document.getElementById('message').textContent=profiles[1];document.getElementById('dimensions').innerHTML=e.map(x=>'<p><strong>'+labels[x[0]]+'</strong> — '+x[1]+'%</p>').join('');document.getElementById('strength').textContent=labels[e[0][0]];document.getElementById('weakness').textContent=labels[e[3][0]];document.getElementById('nextStep').textContent=profiles[2];window.shareText='My Financial System Test score: '+overall+'/100 — '+profiles[0]+'\nhttps://thewealthsage.github.io/the-wealth-sage/pages/test.html'}
-next.onclick=()=>{if(answers[i]===undefined)return;if(i<qs.length-1){i++;render()}else result()};document.getElementById('restart').onclick=()=>{i=0;answers=[];document.getElementById('result').style.display='none';document.getElementById('quiz').style.display='block';render()};document.getElementById('share').onclick=async()=>{if(navigator.share){await navigator.share({title:'My Financial System Test Result',text:window.shareText})}else{await navigator.clipboard.writeText(window.shareText);document.getElementById('share').textContent='Result copied'}};render();
+
+let i=0,answers=[];
+const q=document.getElementById('q'),a=document.getElementById('a'),next=document.getElementById('next'),count=document.getElementById('count');
+
+function render(){
+  count.textContent=`QUESTION ${i+1} OF ${qs.length}`;
+  q.textContent=qs[i][0];
+  a.innerHTML='';
+  qs[i][1].forEach((x,j)=>{
+    const b=document.createElement('button');
+    b.className='answer';
+    b.textContent=x;
+    b.type='button';
+    b.setAttribute('aria-pressed',answers[i]===j?'true':'false');
+    if(answers[i]===j)b.classList.add('selected');
+    b.onclick=()=>{
+      answers[i]=j;
+      document.querySelectorAll('.answer').forEach(v=>{v.classList.remove('selected');v.setAttribute('aria-pressed','false')});
+      b.classList.add('selected');
+      b.setAttribute('aria-pressed','true');
+      next.disabled=false;
+      next.focus();
+    };
+    a.appendChild(b);
+  });
+  next.disabled=answers[i]===undefined;
+  next.textContent=i===qs.length-1?'See my result':'Next →';
+}
+
+function result(){
+  const s={management:0,protection:0,growth:0,system:0},c={management:0,protection:0,growth:0,system:0};
+  answers.forEach((v,n)=>{const k=qs[n][2];s[k]+=v+1;c[k]++});
+  const d={};
+  Object.keys(s).forEach(k=>d[k]=Math.round(s[k]/(c[k]*4)*100));
+  const overall=Math.round(Object.values(d).reduce((x,y)=>x+y,0)/4);
+  const profiles=overall<20?['Starter','You have a clear opportunity to build a stronger financial foundation. Focus first on stability, then build a simple system you can repeat.','Start by reviewing your spending and building an emergency buffer.']:overall<40?['Stabilizer','You have a useful foundation, but parts of your financial system need more stability and clarity.','Turn your financial goals into automatic rules instead of relying on monthly decisions.']:overall<60?['Organizer','You think in an organized way and already have several useful financial habits. Your next step is turning that organization into long-term growth.','Focus on increasing your income and gradually building assets.']:overall<80?['Builder','You have moved beyond many financial basics and are starting to think about money as a system for growth, not just spending.','Build a clear strategy around assets, skills, and income sources.']:['Wealth Builder','You have a long-term view and a relatively integrated financial system. Consistency and risk management now matter more than chasing quick solutions.','Keep your systems strong, review them regularly, and let compounding work in your favor.'];
+  const labels={management:'Money Management',protection:'Financial Protection',growth:'Wealth Building',system:'System Strength'};
+  const e=Object.entries(d).sort((x,y)=>y[1]-x[1]);
+
+  document.getElementById('quiz').style.display='none';
+  document.getElementById('result').style.display='block';
+  document.getElementById('score').textContent=overall+'/100';
+  document.getElementById('profile').textContent=profiles[0];
+  document.getElementById('profileBadge').textContent=profiles[0].toUpperCase();
+  document.getElementById('message').textContent=profiles[1];
+  document.getElementById('dimensions').innerHTML=e.map(([key,value])=>`<div class="dimension"><div class="dimension-head"><strong>${labels[key]}</strong><span>${value}%</span></div><div class="dimension-track"><i style="width:${value}%"></i></div></div>`).join('');
+  document.getElementById('strength').textContent=labels[e[0][0]];
+  document.getElementById('weakness').textContent=labels[e[3][0]];
+  document.getElementById('nextStep').textContent=profiles[2];
+  window.shareText='My Financial System Test score: '+overall+'/100 — '+profiles[0]+'\nhttps://thewealthsage.github.io/the-wealth-sage/pages/test.html';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+next.onclick=()=>{if(answers[i]===undefined)return;if(i<qs.length-1){i++;render()}else result()};
+document.getElementById('restart').onclick=()=>{i=0;answers=[];document.getElementById('result').style.display='none';document.getElementById('quiz').style.display='block';render();window.scrollTo({top:0,behavior:'smooth'})};
+document.getElementById('share').onclick=async()=>{if(navigator.share){await navigator.share({title:'My Financial System Test Result',text:window.shareText})}else{await navigator.clipboard.writeText(window.shareText);document.getElementById('share').textContent='Result copied'}};
+render();
