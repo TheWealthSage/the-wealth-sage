@@ -66,13 +66,7 @@ const menu=document.querySelector('.menu-toggle'),nav=document.querySelector('.n
 
   /* Remove legacy related-text sections so the new component is the only related-article UI. */
   article.querySelectorAll('h2').forEach(h=>{
-    if(/^(related systems|related articles|continue reading)$/i.test(h.textContent.trim())){
-      let node=h;
-      while(node && node.nextElementSibling) node=node.nextElementSibling;
-      h.remove();
-      const lastParagraph=article.querySelector('h2:last-of-type');
-      if(lastParagraph && /^(related systems|related articles|continue reading)$/i.test(lastParagraph.textContent.trim())) lastParagraph.remove();
-    }
+    if(/^(related systems|related articles|continue reading)$/i.test(h.textContent.trim())) h.remove();
   });
 
   const current=(location.pathname.split('/').pop()||'').toLowerCase();
@@ -89,9 +83,29 @@ const menu=document.querySelector('.menu-toggle'),nav=document.querySelector('.n
     .related-reading-link::after{content:" →";color:#c7a66a;font-weight:700}
     .related-reading-link:hover{color:#c7a66a;transform:translateX(3px)}
     .related-reading-link:focus-visible{outline:2px solid #c7a66a;outline-offset:4px}
-    @media(max-width:520px){.related-reading{margin-top:48px;padding:24px 20px}.related-reading h2{font-size:29px}.related-reading-link{font-size:14px}}
+    .wealth-book-cta{display:block;width:100%;box-sizing:border-box;text-decoration:none!important;color:#f4f1e9!important;margin-top:54px;padding:28px 30px;border:1px solid rgba(199,166,106,.28);background:#0f1416;transition:border-color .18s,background .18s}
+    .wealth-book-cta .eyebrow{display:block;margin-bottom:8px}
+    .wealth-book-cta h2{font-family:"Playfair Display",serif;font-size:30px;line-height:1.15;margin:0 0 8px;color:#f4f1e9}
+    .wealth-book-cta p{color:#a8aaa5;max-width:650px;margin:0 0 17px}
+    .wealth-book-cta .wealth-book-link{color:#c7a66a;font-weight:700;font-size:14px;text-decoration:none}
+    .wealth-book-cta:hover{border-color:rgba(199,166,106,.5);background:#11181a}
+    .wealth-book-cta:hover .wealth-book-link{color:#f4f1e9}
+    @media(max-width:520px){
+      .related-reading{margin-top:48px;padding:24px 20px}
+      .related-reading h2{font-size:29px}
+      .related-reading-link{font-size:14px}
+      .wealth-book-cta{margin-top:46px;padding:24px 20px}
+      .wealth-book-cta h2{font-size:26px}
+    }
   `;
   document.head.appendChild(style);
+
+  /* Style the existing book CTA as a full-width, quiet end-of-article card. */
+  const cta=article.querySelector('.wealth-book-cta');
+  if(cta){
+    const link=cta.querySelector('span:last-child');
+    if(link) link.classList.add('wealth-book-link');
+  }
 
   const box=document.createElement('section');
   box.className='related-reading';
