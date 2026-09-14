@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://thewealthsage.github.io/the-wealth-sage/sitemap.xml
+Sitemap: https://thewealthsage.netlify.app/sitemap.xml
