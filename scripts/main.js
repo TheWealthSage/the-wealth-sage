@@ -6,68 +6,20 @@ const menu=document.querySelector('.menu-toggle'),nav=document.querySelector('.n
   if(!article) return;
 
   const related={
-    'article-50-30-20.html':[
-      ['Pay Yourself First','article-pay-yourself-first.html'],
-      ['The Lifestyle Creep Trap','article-lifestyle-creep.html'],
-      ['Your Emergency Fund','article-emergency-fund.html']
-    ],
-    'article-assets-vs-income.html':[
-      ['What Is an Asset?','article-what-is-an-asset.html'],
-      ['How to Build Wealth','article-building-wealth.html'],
-      ['Pay Yourself First','article-pay-yourself-first.html']
-    ],
-    'article-building-wealth.html':[
-      ['Assets vs Income','article-assets-vs-income.html'],
-      ['What Is an Asset?','article-what-is-an-asset.html'],
-      ['Increase Your Earning Power','article-increase-earning-power.html']
-    ],
-    'article-earning-power-vs-salary.html':[
-      ['How to Increase Earning Power','article-increase-earning-power.html'],
-      ['Assets vs Income','article-assets-vs-income.html'],
-      ['How to Build Wealth','article-building-wealth.html']
-    ],
-    'article-emergency-fund.html':[
-      ['Pay Yourself First','article-pay-yourself-first.html'],
-      ['The 50/30/20 Rule','article-50-30-20.html'],
-      ['What Is an Asset?','article-what-is-an-asset.html']
-    ],
-    'article-increase-earning-power.html':[
-      ['Earning Power vs Salary','article-earning-power-vs-salary.html'],
-      ['Assets vs Income','article-assets-vs-income.html'],
-      ['How to Build Wealth','article-building-wealth.html']
-    ],
-    'article-lifestyle-creep.html':[
-      ['The 50/30/20 Rule','article-50-30-20.html'],
-      ['Pay Yourself First','article-pay-yourself-first.html'],
-      ['Assets vs Income','article-assets-vs-income.html']
-    ],
-    'article-pay-yourself-first.html':[
-      ['What Does Pay Yourself First Mean?','article-what-does-pay-yourself-first-mean.html'],
-      ['The 50/30/20 Rule','article-50-30-20.html'],
-      ['Your Emergency Fund','article-emergency-fund.html']
-    ],
-    'article-what-does-pay-yourself-first-mean.html':[
-      ['Pay Yourself First','article-pay-yourself-first.html'],
-      ['The 50/30/20 Rule','article-50-30-20.html'],
-      ['How to Build Wealth','article-building-wealth.html']
-    ],
-    'article-what-is-an-asset.html':[
-      ['Assets vs Income','article-assets-vs-income.html'],
-      ['How to Build Wealth','article-building-wealth.html'],
-      ['Increase Your Earning Power','article-increase-earning-power.html']
-    ]
+    'article-50-30-20.html':[['Pay Yourself First','article-pay-yourself-first.html'],['The Lifestyle Creep Trap','article-lifestyle-creep.html'],['Your Emergency Fund','article-emergency-fund.html']],
+    'article-assets-vs-income.html':[['What Is an Asset?','article-what-is-an-asset.html'],['How to Build Wealth','article-building-wealth.html'],['Pay Yourself First','article-pay-yourself-first.html']],
+    'article-building-wealth.html':[['Assets vs Income','article-assets-vs-income.html'],['What Is an Asset?','article-what-is-an-asset.html'],['Increase Your Earning Power','article-increase-earning-power.html']],
+    'article-earning-power-vs-salary.html':[['How to Increase Earning Power','article-increase-earning-power.html'],['Assets vs Income','article-assets-vs-income.html'],['How to Build Wealth','article-building-wealth.html']],
+    'article-emergency-fund.html':[['Pay Yourself First','article-pay-yourself-first.html'],['The 50/30/20 Rule','article-50-30-20.html'],['What Is an Asset?','article-what-is-an-asset.html']],
+    'article-increase-earning-power.html':[['Earning Power vs Salary','article-earning-power-vs-salary.html'],['Assets vs Income','article-assets-vs-income.html'],['How to Build Wealth','article-building-wealth.html']],
+    'article-lifestyle-creep.html':[['The 50/30/20 Rule','article-50-30-20.html'],['Pay Yourself First','article-pay-yourself-first.html'],['Assets vs Income','article-assets-vs-income.html']],
+    'article-pay-yourself-first.html':[['What Does Pay Yourself First Mean?','article-what-does-pay-yourself-first-mean.html'],['The 50/30/20 Rule','article-50-30-20.html'],['Your Emergency Fund','article-emergency-fund.html']],
+    'article-what-does-pay-yourself-first-mean.html':[['Pay Yourself First','article-pay-yourself-first.html'],['The 50/30/20 Rule','article-50-30-20.html'],['How to Build Wealth','article-building-wealth.html']],
+    'article-what-is-an-asset.html':[['Assets vs Income','article-assets-vs-income.html'],['How to Build Wealth','article-building-wealth.html'],['Increase Your Earning Power','article-increase-earning-power.html']]
   };
 
-  /* Remove cross-article links from the body while keeping their visible wording. */
-  article.querySelectorAll('a[href]').forEach(link=>{
-    const href=link.getAttribute('href')||'';
-    if(/^article-[^/]+\.html(?:#.*)?$/.test(href)) link.replaceWith(document.createTextNode(link.textContent));
-  });
-
-  /* Remove legacy related-text sections so the new component is the only related-article UI. */
-  article.querySelectorAll('h2').forEach(h=>{
-    if(/^(related systems|related articles|continue reading)$/i.test(h.textContent.trim())) h.remove();
-  });
+  article.querySelectorAll('a[href]').forEach(link=>{const href=link.getAttribute('href')||'';if(/^article-[^/]+\.html(?:#.*)?$/.test(href)) link.replaceWith(document.createTextNode(link.textContent));});
+  article.querySelectorAll('h2').forEach(h=>{if(/^(related systems|related articles|continue reading)$/i.test(h.textContent.trim())) h.remove();});
 
   const current=(location.pathname.split('/').pop()||'').toLowerCase();
   const items=related[current]||[];
@@ -90,34 +42,30 @@ const menu=document.querySelector('.menu-toggle'),nav=document.querySelector('.n
     .wealth-book-cta .wealth-book-link{color:#c7a66a;font-weight:700;font-size:14px;text-decoration:none}
     .wealth-book-cta:hover{border-color:rgba(199,166,106,.5);background:#11181a}
     .wealth-book-cta:hover .wealth-book-link{color:#f4f1e9}
-    @media(max-width:520px){
-      .related-reading{margin-top:48px;padding:24px 20px}
-      .related-reading h2{font-size:29px}
-      .related-reading-link{font-size:14px}
-      .wealth-book-cta{margin-top:46px;padding:24px 20px}
-      .wealth-book-cta h2{font-size:26px}
-    }
+    @media(max-width:520px){.related-reading{margin-top:48px;padding:24px 20px}.related-reading h2{font-size:29px}.related-reading-link{font-size:14px}.wealth-book-cta{margin-top:46px;padding:24px 20px}.wealth-book-cta h2{font-size:26px}}
   `;
   document.head.appendChild(style);
 
-  /* Style the existing book CTA as a full-width, quiet end-of-article card. */
   const cta=article.querySelector('.wealth-book-cta');
-  if(cta){
-    const link=cta.querySelector('span:last-child');
-    if(link) link.classList.add('wealth-book-link');
-  }
+  if(cta){const link=cta.querySelector('span:last-child');if(link) link.classList.add('wealth-book-link');}
 
   const box=document.createElement('section');
   box.className='related-reading';
   box.setAttribute('aria-labelledby','related-reading-title');
   box.innerHTML='<h2 id="related-reading-title">Continue reading</h2><p>Explore the related ideas below and build the bigger picture.</p><div class="related-reading-list"></div>';
   const list=box.querySelector('.related-reading-list');
-  items.forEach(([title,href])=>{
-    const a=document.createElement('a');
-    a.className='related-reading-link';
-    a.href=href;
-    a.textContent=title;
-    list.appendChild(a);
-  });
+  items.forEach(([title,href])=>{const a=document.createElement('a');a.className='related-reading-link';a.href=href;a.textContent=title;list.appendChild(a);});
   article.appendChild(box);
+})();
+
+/* Keep canonical and social URLs aligned with the Netlify production host. */
+(function(){
+  const host=location.hostname;
+  if(host!=='thewealthsage.netlify.app') return;
+  const canonical=document.querySelector('link[rel="canonical"]');
+  if(canonical) canonical.href=location.href.split('#')[0];
+  const og=document.querySelector('meta[property="og:url"]');
+  if(og) og.setAttribute('content',location.href.split('#')[0]);
+  const ld=document.querySelector('script[type="application/ld+json"]');
+  if(ld){try{const data=JSON.parse(ld.textContent);if(data.mainEntityOfPage&&typeof data.mainEntityOfPage==='object')data.mainEntityOfPage['@id']=location.href.split('#')[0];if(data.publisher&&data.publisher.url)data.publisher.url=location.origin+location.pathname.split('/').slice(0,-1).join('/')+'/';ld.textContent=JSON.stringify(data);}catch(e){}}
 })();
