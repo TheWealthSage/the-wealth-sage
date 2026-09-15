@@ -62,10 +62,10 @@ const menu=document.querySelector('.menu-toggle'),nav=document.querySelector('.n
 (function(){
   const host=location.hostname;
   if(host!=='thewealthsage.netlify.app') return;
+  const liveUrl=location.href.split('#')[0];
   const canonical=document.querySelector('link[rel="canonical"]');
-  if(canonical) canonical.href=location.href.split('#')[0];
+  if(canonical) canonical.href=liveUrl;
   const og=document.querySelector('meta[property="og:url"]');
-  if(og) og.setAttribute('content',location.href.split('#')[0]);
-  const ld=document.querySelector('script[type="application/ld+json"]');
-  if(ld){try{const data=JSON.parse(ld.textContent);if(data.mainEntityOfPage&&typeof data.mainEntityOfPage==='object')data.mainEntityOfPage['@id']=location.href.split('#')[0];if(data.publisher&&data.publisher.url)data.publisher.url=location.origin+location.pathname.split('/').slice(0,-1).join('/')+'/';ld.textContent=JSON.stringify(data);}catch(e){}}
+  if(og) og.setAttribute('content',liveUrl);
+  document.querySelectorAll('script[type="application/ld+json"]').forEach(ld=>{try{const data=JSON.parse(ld.textContent);if(data.mainEntityOfPage&&typeof data.mainEntityOfPage==='object')data.mainEntityOfPage['@id']=liveUrl;if(data.publisher&&data.publisher.url)data.publisher.url=location.origin+'/';ld.textContent=JSON.stringify(data);}catch(e){}});
 })();
