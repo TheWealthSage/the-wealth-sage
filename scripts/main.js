@@ -57,15 +57,3 @@ const menu=document.querySelector('.menu-toggle'),nav=document.querySelector('.n
   items.forEach(([title,href])=>{const a=document.createElement('a');a.className='related-reading-link';a.href=href;a.textContent=title;list.appendChild(a);});
   article.appendChild(box);
 })();
-
-/* Keep canonical and social URLs aligned with the Netlify production host. */
-(function(){
-  const host=location.hostname;
-  if(host!=='thewealthsage.netlify.app') return;
-  const liveUrl=location.href.split('#')[0];
-  const canonical=document.querySelector('link[rel="canonical"]');
-  if(canonical) canonical.href=liveUrl;
-  const og=document.querySelector('meta[property="og:url"]');
-  if(og) og.setAttribute('content',liveUrl);
-  document.querySelectorAll('script[type="application/ld+json"]').forEach(ld=>{try{const data=JSON.parse(ld.textContent);if(data.mainEntityOfPage&&typeof data.mainEntityOfPage==='object')data.mainEntityOfPage['@id']=liveUrl;if(data.publisher&&data.publisher.url)data.publisher.url=location.origin+'/';ld.textContent=JSON.stringify(data);}catch(e){}});
-})();
