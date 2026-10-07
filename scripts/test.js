@@ -19,21 +19,26 @@ const q=document.getElementById('q'),a=document.getElementById('a'),next=documen
 function render(){
   count.textContent=`QUESTION ${i+1} OF ${qs.length}`;
   q.textContent=qs[i][0];
+  document.getElementById('previous').disabled=i===0;
+  a.setAttribute('role','radiogroup');a.setAttribute('aria-label',qs[i][0]);
   a.innerHTML='';
   qs[i][1].forEach((x,j)=>{
     const b=document.createElement('button');
     b.className='answer';
     b.textContent=x;
     b.type='button';
-    b.setAttribute('aria-pressed',answers[i]===j?'true':'false');
+    b.setAttribute('role','radio');
+    b.tabIndex=(answers[i]===j||(answers[i]===undefined&&j===0))?0:-1;
+    b.onkeydown=e=>{if(['ArrowRight','ArrowDown','ArrowLeft','ArrowUp'].includes(e.key)){e.preventDefault();const delta=['ArrowRight','ArrowDown'].includes(e.key)?1:-1;const buttons=[...a.querySelectorAll('.answer')];const target=buttons[(j+delta+buttons.length)%buttons.length];target.click();target.focus()}};
+    b.setAttribute('aria-checked',answers[i]===j?'true':'false');
     if(answers[i]===j)b.classList.add('selected');
     b.onclick=()=>{
       answers[i]=j;
-      document.querySelectorAll('.answer').forEach(v=>{v.classList.remove('selected');v.setAttribute('aria-pressed','false')});
+      document.querySelectorAll('.answer').forEach(v=>{v.classList.remove('selected');v.setAttribute('aria-checked','false')});
       b.classList.add('selected');
-      b.setAttribute('aria-pressed','true');
+      b.setAttribute('aria-checked','true');
       next.disabled=false;
-      next.focus();
+      a.querySelectorAll('.answer').forEach(v=>v.tabIndex=v===b?0:-1);
     };
     a.appendChild(b);
   });
@@ -43,9 +48,9 @@ function render(){
 
 function result(){
   const s={management:0,protection:0,growth:0,system:0},c={management:0,protection:0,growth:0,system:0};
-  answers.forEach((v,n)=>{const k=qs[n][2];s[k]+=v+1;c[k]++});
+  answers.forEach((v,n)=>{const k=qs[n][2];s[k]+=v;c[k]++});
   const d={};
-  Object.keys(s).forEach(k=>d[k]=Math.round(s[k]/(c[k]*4)*100));
+  Object.keys(s).forEach(k=>d[k]=Math.round(s[k]/(c[k]*3)*100));
   const overall=Math.round(Object.values(d).reduce((x,y)=>x+y,0)/4);
   const profiles=overall<20?['Starter','You have a clear opportunity to build a stronger financial foundation. Focus first on stability, then build a simple system you can repeat.','Start by reviewing your spending and building an emergency buffer.']:overall<40?['Stabilizer','You have a useful foundation, but parts of your financial system need more stability and clarity.','Turn your financial goals into automatic rules instead of relying on monthly decisions.']:overall<60?['Organizer','You think in an organized way and already have several useful financial habits. Your next step is turning that organization into long-term growth.','Focus on increasing your income and gradually building assets.']:overall<80?['Builder','You have moved beyond many financial basics and are starting to think about money as a system for growth, not just spending.','Build a clear strategy around assets, skills, and income sources.']:['Wealth Builder','You have a long-term view and a relatively integrated financial system. Consistency and risk management now matter more than chasing quick solutions.','Keep your systems strong, review them regularly, and let compounding work in your favor.'];
   const labels={management:'Money Management',protection:'Financial Protection',growth:'Wealth Building',system:'System Strength'};
@@ -58,14 +63,15 @@ function result(){
   document.getElementById('profileBadge').textContent=profiles[0].toUpperCase();
   document.getElementById('message').textContent=profiles[1];
   document.getElementById('dimensions').innerHTML=e.map(([key,value])=>`<div class="dimension"><div class="dimension-head"><strong>${labels[key]}</strong><span>${value}%</span></div><div class="dimension-track"><i style="width:${value}%"></i></div></div>`).join('');
-  document.getElementById('strength').textContent=labels[e[0][0]];
-  document.getElementById('weakness').textContent=labels[e[3][0]];
+  document.getElementById('strength').textContent=e.filter(x=>x[1]===e[0][1]).map(x=>labels[x[0]]).join(' / ');
+  document.getElementById('weakness').textContent=e.filter(x=>x[1]===e[3][1]).map(x=>labels[x[0]]).join(' / ');
   document.getElementById('nextStep').textContent=profiles[2];
   window.shareText='My Financial System Test score: '+overall+'/100 — '+profiles[0]+'\nhttps://thewealthsage.github.io/the-wealth-sage/pages/test.html';
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
+document.getElementById('previous').onclick=()=>{if(i>0){i--;render()}};
 next.onclick=()=>{if(answers[i]===undefined)return;if(i<qs.length-1){i++;render()}else result()};
 document.getElementById('restart').onclick=()=>{i=0;answers=[];document.getElementById('result').style.display='none';document.getElementById('quiz').style.display='block';render();window.scrollTo({top:0,behavior:'smooth'})};
-document.getElementById('share').onclick=async()=>{if(navigator.share){await navigator.share({title:'My Financial System Test Result',text:window.shareText})}else{await navigator.clipboard.writeText(window.shareText);document.getElementById('share').textContent='Result copied'}};
+document.getElementById('share').onclick=async()=>{try{if(navigator.share){await navigator.share({title:'My Financial System Test Result',text:window.shareText})}else{await navigator.clipboard.writeText(window.shareText);document.getElementById('share').textContent='Result copied'}}catch(error){if(error.name!=='AbortError')document.getElementById('share').textContent='Could not share — try again'}};
 render();

@@ -1,6 +1,13 @@
-const menu=document.querySelector('.menu-toggle'),nav=document.querySelector('.nav');if(menu&&nav)menu.addEventListener('click',()=>nav.classList.toggle('open'));
+const menu=document.querySelector('.menu-toggle'),nav=document.querySelector('.nav');if(menu&&nav){menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));menu.setAttribute('aria-label',open?'Close menu':'Open menu')});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&nav.classList.contains('open')){nav.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.setAttribute('aria-label','Open menu');menu.focus()}});}
 
-/* Clean article navigation and present related reading as a quiet end-of-article panel. */
+/* Use the book's actual title consistently in navigation and calls to action. */
+document.querySelectorAll('a[href="https://luffy11223345.systeme.io/system"]').forEach(link=>{
+  const label=link.textContent.trim();
+  if(label==='The Book'||label==='Book')link.textContent='The Wealth System';
+  else if(label==='Get the free ebook'||label==='Explore the book →')link.textContent='Get The Wealth System →';
+});
+
+/* Present related reading as a quiet end-of-article panel. */
 (function(){
   const article=document.querySelector('.article-body');
   if(!article) return;
@@ -18,7 +25,6 @@ const menu=document.querySelector('.menu-toggle'),nav=document.querySelector('.n
     'article-what-is-an-asset.html':[['Assets vs Income','article-assets-vs-income.html'],['How to Build Wealth','article-building-wealth.html'],['Increase Your Earning Power','article-increase-earning-power.html']]
   };
 
-  article.querySelectorAll('a[href]').forEach(link=>{const href=link.getAttribute('href')||'';if(/^article-[^/]+\.html(?:#.*)?$/.test(href)) link.replaceWith(document.createTextNode(link.textContent));});
   article.querySelectorAll('h2').forEach(h=>{if(/^(related systems|related articles|continue reading)$/i.test(h.textContent.trim())) h.remove();});
 
   const current=(location.pathname.split('/').pop()||'').toLowerCase();
