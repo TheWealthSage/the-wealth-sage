@@ -13,6 +13,10 @@ document.querySelectorAll('a[href="https://luffy11223345.systeme.io/system"]').f
   if(!article) return;
 
   const related={
+    'article-high-yield-savings-account.html':[['Sinking Funds','article-sinking-funds.html'],['Your Emergency Fund','article-emergency-fund.html'],['Zero-Based Budgeting','article-zero-based-budgeting.html']],
+    'article-sinking-funds.html':[['High-Yield Savings Accounts','article-high-yield-savings-account.html'],['Your Emergency Fund','article-emergency-fund.html'],['Zero-Based Budgeting','article-zero-based-budgeting.html']],
+    'article-zero-based-budgeting.html':[['The 50/30/20 Rule','article-50-30-20.html'],['Sinking Funds','article-sinking-funds.html'],['Pay Yourself First','article-pay-yourself-first.html']],
+
     'article-50-30-20.html':[['Pay Yourself First','article-pay-yourself-first.html'],['The Lifestyle Creep Trap','article-lifestyle-creep.html'],['Your Emergency Fund','article-emergency-fund.html']],
     'article-assets-vs-income.html':[['What Is an Asset?','article-what-is-an-asset.html'],['How to Build Wealth','article-building-wealth.html'],['Pay Yourself First','article-pay-yourself-first.html']],
     'article-building-wealth.html':[['Assets vs Income','article-assets-vs-income.html'],['What Is an Asset?','article-what-is-an-asset.html'],['Increase Your Earning Power','article-increase-earning-power.html']],
@@ -62,4 +66,30 @@ document.querySelectorAll('a[href="https://luffy11223345.systeme.io/system"]').f
   const list=box.querySelector('.related-reading-list');
   items.forEach(([title,href])=>{const a=document.createElement('a');a.className='related-reading-link';a.href=href;a.textContent=title;list.appendChild(a);});
   article.appendChild(box);
+})();
+
+
+// Keep the active navigation item visible and add a consistent reading-time label to article pages.
+(function(){
+  const currentPath=window.location.pathname;
+  document.querySelectorAll('.nav a[href]').forEach(function(link){
+    const href=link.getAttribute('href');
+    if(!href || /^https?:/i.test(href)) return;
+    const linkPath=new URL(href,window.location.href).pathname;
+    const isHome=(/\/the-wealth-sage\/$/.test(currentPath) && /\/index\.html$/.test(linkPath));
+    if(linkPath===currentPath || isHome) link.setAttribute('aria-current','page');
+    else link.removeAttribute('aria-current');
+  });
+})();
+(function(){
+  const current=(window.location.pathname.split('/').pop()||'').toLowerCase();
+  if(!/^article-.+\.html$/.test(current)) return;
+  const body=document.querySelector('.article-body');
+  const page=document.querySelector('.article-page');
+  const meta=page&&page.querySelector('.eyebrow');
+  if(!body||!meta||/\b\d+\s*MIN READ\b/i.test(meta.textContent)) return;
+  const words=(body.innerText||body.textContent||'').trim().split(/\s+/).filter(Boolean).length;
+  const minutes=Math.max(3,Math.ceil(words/220));
+  meta.classList.add('article-meta');
+  meta.textContent=meta.textContent.trim()+' • '+minutes+' MIN READ';
 })();
