@@ -24,8 +24,7 @@ document.querySelectorAll('a[href="https://luffy11223345.systeme.io/system"]').f
     'article-emergency-fund.html':[['Pay Yourself First','article-pay-yourself-first.html'],['The 50/30/20 Rule','article-50-30-20.html'],['What Is an Asset?','article-what-is-an-asset.html']],
     'article-increase-earning-power.html':[['Earning Power vs Salary','article-earning-power-vs-salary.html'],['Assets vs Income','article-assets-vs-income.html'],['How to Build Wealth','article-building-wealth.html']],
     'article-lifestyle-creep.html':[['The 50/30/20 Rule','article-50-30-20.html'],['Pay Yourself First','article-pay-yourself-first.html'],['Assets vs Income','article-assets-vs-income.html']],
-    'article-pay-yourself-first.html':[['What Does Pay Yourself First Mean?','article-what-does-pay-yourself-first-mean.html'],['The 50/30/20 Rule','article-50-30-20.html'],['Your Emergency Fund','article-emergency-fund.html']],
-    'article-what-does-pay-yourself-first-mean.html':[['Pay Yourself First','article-pay-yourself-first.html'],['The 50/30/20 Rule','article-50-30-20.html'],['How to Build Wealth','article-building-wealth.html']],
+    'article-pay-yourself-first.html':[['What Is an Asset?','article-what-is-an-asset.html'],['How to Build Wealth','article-building-wealth.html'],['Earning Power vs Salary','article-earning-power-vs-salary.html']],
     'article-what-is-an-asset.html':[['Assets vs Income','article-assets-vs-income.html'],['How to Build Wealth','article-building-wealth.html'],['Increase Your Earning Power','article-increase-earning-power.html']]
   };
 
