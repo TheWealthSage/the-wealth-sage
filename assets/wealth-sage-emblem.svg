@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" role="img" aria-labelledby="title desc">
+  <title id="title">The Wealth Sage emblem</title>
+  <desc id="desc">A gold W monogram with ascending bars symbolizing deliberate financial growth.</desc>
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff0b8"/>
+      <stop offset=".22" stop-color="#e8c579"/>
+      <stop offset=".55" stop-color="#b8893e"/>
+      <stop offset=".78" stop-color="#f2d48c"/>
+      <stop offset="1" stop-color="#8b642c"/>
+    </linearGradient>
+    <linearGradient id="barGold" x1="0" y1="0" x2="0.9" y2="1">
+      <stop offset="0" stop-color="#f8dfa0"/>
+      <stop offset="1" stop-color="#9e7336"/>
+    </linearGradient>
+    <radialGradient id="halo">
+      <stop offset="0" stop-color="#c7a66a" stop-opacity=".19"/>
+      <stop offset="1" stop-color="#c7a66a" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="softGlow" x="-35%" y="-35%" width="170%" height="170%">
+      <feGaussianBlur stdDeviation="9"/>
+    </filter>
+  </defs>
+  <circle cx="320" cy="320" r="265" fill="url(#halo)"/>
+  <circle cx="320" cy="320" r="247" fill="none" stroke="#c7a66a" stroke-opacity=".16" stroke-width="1.5"/>
+  <circle cx="320" cy="320" r="229" fill="none" stroke="#c7a66a" stroke-opacity=".12" stroke-width="1"/>
+  <path d="M135 208 L201 208 L263 358 L305 266 L335 266 L377 358 L439 208 L505 208 L408 430 L365 430 L320 333 L275 430 L232 430 Z" fill="#c7a66a" opacity=".18" filter="url(#softGlow)"/>
+  <g stroke="#6f4d20" stroke-width="1.5" stroke-linejoin="round">
+    <path d="M135 208 L201 208 L263 358 L305 266 L335 266 L377 358 L439 208 L505 208 L408 430 L365 430 L320 333 L275 430 L232 430 Z" fill="url(#gold)"/>
+    <path d="M270 252 V207 L300 186 V252 Z" fill="url(#barGold)"/>
+    <path d="M309 252 V165 L339 144 V252 Z" fill="url(#barGold)"/>
+    <path d="M348 252 V121 L378 100 V252 Z" fill="url(#barGold)"/>
+  </g>
+  <g fill="none" stroke="#fff0bf" stroke-opacity=".5" stroke-width="1.2">
+    <path d="M146 217 L193 217 L259 378"/>
+    <path d="M494 217 L448 217 L381 378"/>
+    <path d="M278 247 V212 L293 201"/>
+    <path d="M317 247 V170 L332 159"/>
+    <path d="M356 247 V126 L371 115"/>
+  </g>
+</svg>
