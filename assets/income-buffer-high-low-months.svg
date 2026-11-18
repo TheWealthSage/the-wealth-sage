@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600" role="img" aria-labelledby="title desc">
+<title id="title">How an income buffer supports high and low income months</title>
+<desc id="desc">In a high month, 3800 dollars of take-home income exceeds a 2800 dollar baseline by 1000 dollars. In a low month, 2200 dollars is 600 dollars below the baseline, so an existing income buffer can cover the gap.</desc>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#111719"/><stop offset="1" stop-color="#080a0c"/></linearGradient><linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f2d697"/><stop offset="1" stop-color="#a67b3c"/></linearGradient></defs>
+<rect width="1200" height="600" fill="url(#bg)"/>
+<text x="65" y="72" fill="#c7a66a" font-family="Arial,sans-serif" font-size="17" font-weight="700" letter-spacing="4">A SIMPLE INCOME-BUFFER EXAMPLE</text>
+<text x="65" y="125" fill="#f1ecdf" font-family="Georgia,serif" font-size="38" font-weight="700">Keep the spending plan steady.</text>
+<g transform="translate(65 170)">
+<rect width="505" height="310" rx="16" fill="#151b1d" stroke="#c7a66a" stroke-opacity=".42"/>
+<rect x="28" y="27" width="120" height="28" rx="14" fill="#c7a66a" fill-opacity=".16"/>
+<text x="88" y="46" text-anchor="middle" fill="#e6c987" font-family="Arial,sans-serif" font-size="12" font-weight="700" letter-spacing="1">HIGH MONTH</text>
+<text x="30" y="110" fill="#aaa99f" font-family="Arial,sans-serif" font-size="16">Take-home income</text>
+<text x="475" y="112" text-anchor="end" fill="#f2eee6" font-family="Georgia,serif" font-size="38" font-weight="700">$3,800</text>
+<path d="M30 135H475" stroke="#464b48"/>
+<text x="30" y="178" fill="#aaa99f" font-family="Arial,sans-serif" font-size="16">Baseline plan</text>
+<text x="475" y="180" text-anchor="end" fill="#f2eee6" font-family="Georgia,serif" font-size="28">$2,800</text>
+<rect x="30" y="205" width="445" height="12" rx="6" fill="#333a37"/>
+<rect x="30" y="205" width="328" height="12" rx="6" fill="#c7a66a"/>
+<text x="30" y="258" fill="#d5c59f" font-family="Arial,sans-serif" font-size="16" font-weight="700">$1,000 above baseline</text>
+<text x="30" y="282" fill="#aaa99f" font-family="Arial,sans-serif" font-size="13">After planned costs and tax set-asides</text>
+</g>
+<g transform="translate(630 170)">
+<rect width="505" height="310" rx="16" fill="#151b1d" stroke="#c7a66a" stroke-opacity=".42"/>
+<rect x="28" y="27" width="115" height="28" rx="14" fill="#c7a66a" fill-opacity=".16"/>
+<text x="85" y="46" text-anchor="middle" fill="#e6c987" font-family="Arial,sans-serif" font-size="12" font-weight="700" letter-spacing="1">LOW MONTH</text>
+<text x="30" y="110" fill="#aaa99f" font-family="Arial,sans-serif" font-size="16">Take-home income</text>
+<text x="475" y="112" text-anchor="end" fill="#f2eee6" font-family="Georgia,serif" font-size="38" font-weight="700">$2,200</text>
+<path d="M30 135H475" stroke="#464b48"/>
+<text x="30" y="178" fill="#aaa99f" font-family="Arial,sans-serif" font-size="16">Baseline plan</text>
+<text x="475" y="180" text-anchor="end" fill="#f2eee6" font-family="Georgia,serif" font-size="28">$2,800</text>
+<rect x="30" y="205" width="445" height="12" rx="6" fill="#333a37"/>
+<rect x="30" y="205" width="257" height="12" rx="6" fill="#9b7b4c"/>
+<text x="30" y="258" fill="#d5c59f" font-family="Arial,sans-serif" font-size="16" font-weight="700">$600 gap to cover</text>
+<text x="30" y="282" fill="#aaa99f" font-family="Arial,sans-serif" font-size="13">Use an existing buffer; do not assume future income</text>
+</g>
+<text x="65" y="545" fill="#c7a66a" font-family="Arial,sans-serif" font-size="14" font-weight="700" letter-spacing="2">EXAMPLE ONLY • BUILD THE BUFFER GRADUALLY • KEEP TAXES AND BUSINESS COSTS SEPARATE</text>
+</svg>
