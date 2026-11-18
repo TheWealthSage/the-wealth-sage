@@ -13,18 +13,19 @@ document.querySelectorAll('a[href="https://luffy11223345.systeme.io/system"]').f
   if(!article) return;
 
   const related={
+    'article-budget-irregular-income.html':[['Zero-Based Budgeting','article-zero-based-budgeting.html'],['Sinking Funds','article-sinking-funds.html'],['Your Emergency Fund','article-emergency-fund.html'],['Pay Yourself First','article-pay-yourself-first.html']],
     'article-high-yield-savings-account.html':[['Sinking Funds','article-sinking-funds.html'],['Your Emergency Fund','article-emergency-fund.html'],['Zero-Based Budgeting','article-zero-based-budgeting.html']],
-    'article-sinking-funds.html':[['High-Yield Savings Accounts','article-high-yield-savings-account.html'],['Your Emergency Fund','article-emergency-fund.html'],['Zero-Based Budgeting','article-zero-based-budgeting.html']],
-    'article-zero-based-budgeting.html':[['The 50/30/20 Rule','article-50-30-20.html'],['Sinking Funds','article-sinking-funds.html'],['Pay Yourself First','article-pay-yourself-first.html']],
+    'article-sinking-funds.html':[['High-Yield Savings Accounts','article-high-yield-savings-account.html'],['Budgeting With Irregular Income','article-budget-irregular-income.html'],['Your Emergency Fund','article-emergency-fund.html']],
+    'article-zero-based-budgeting.html':[['The 50/30/20 Rule','article-50-30-20.html'],['Budgeting With Irregular Income','article-budget-irregular-income.html'],['Sinking Funds','article-sinking-funds.html']],
 
     'article-50-30-20.html':[['Pay Yourself First','article-pay-yourself-first.html'],['The Lifestyle Creep Trap','article-lifestyle-creep.html'],['Your Emergency Fund','article-emergency-fund.html']],
     'article-assets-vs-income.html':[['What Is an Asset?','article-what-is-an-asset.html'],['How to Build Wealth','article-building-wealth.html'],['Pay Yourself First','article-pay-yourself-first.html']],
     'article-building-wealth.html':[['Assets vs Income','article-assets-vs-income.html'],['What Is an Asset?','article-what-is-an-asset.html'],['Increase Your Earning Power','article-increase-earning-power.html']],
     'article-earning-power-vs-salary.html':[['How to Increase Earning Power','article-increase-earning-power.html'],['Assets vs Income','article-assets-vs-income.html'],['How to Build Wealth','article-building-wealth.html']],
-    'article-emergency-fund.html':[['Pay Yourself First','article-pay-yourself-first.html'],['The 50/30/20 Rule','article-50-30-20.html'],['What Is an Asset?','article-what-is-an-asset.html']],
+    'article-emergency-fund.html':[['Budgeting With Irregular Income','article-budget-irregular-income.html'],['Pay Yourself First','article-pay-yourself-first.html'],['The 50/30/20 Rule','article-50-30-20.html']],
     'article-increase-earning-power.html':[['Earning Power vs Salary','article-earning-power-vs-salary.html'],['Assets vs Income','article-assets-vs-income.html'],['How to Build Wealth','article-building-wealth.html']],
     'article-lifestyle-creep.html':[['The 50/30/20 Rule','article-50-30-20.html'],['Pay Yourself First','article-pay-yourself-first.html'],['Assets vs Income','article-assets-vs-income.html']],
-    'article-pay-yourself-first.html':[['What Is an Asset?','article-what-is-an-asset.html'],['How to Build Wealth','article-building-wealth.html'],['Earning Power vs Salary','article-earning-power-vs-salary.html']],
+    'article-pay-yourself-first.html':[['Budgeting With Irregular Income','article-budget-irregular-income.html'],['What Is an Asset?','article-what-is-an-asset.html'],['How to Build Wealth','article-building-wealth.html']],
     'article-what-is-an-asset.html':[['Assets vs Income','article-assets-vs-income.html'],['How to Build Wealth','article-building-wealth.html'],['Increase Your Earning Power','article-increase-earning-power.html']]
   };
 
