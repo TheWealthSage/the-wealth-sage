@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+<title id="title">A four-step system for budgeting with irregular income</title>
+<desc id="desc">Track take-home income, set a conservative monthly baseline, build a buffer in stronger months, and use it to smooth lower-income months.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#101719"/><stop offset="1" stop-color="#07090b"/></linearGradient>
+  <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f2d697"/><stop offset=".55" stop-color="#c7a66a"/><stop offset="1" stop-color="#8b642c"/></linearGradient>
+  <filter id="glow"><feGaussianBlur stdDeviation="22"/></filter>
+</defs>
+<rect width="1200" height="675" fill="url(#bg)"/>
+<circle cx="1000" cy="70" r="260" fill="#c7a66a" opacity=".06" filter="url(#glow)"/>
+<path d="M0 560H1200" stroke="#c7a66a" stroke-opacity=".18"/>
+<text x="68" y="82" fill="#c7a66a" font-family="Arial,sans-serif" font-size="18" font-weight="700" letter-spacing="4">THE WEALTH SAGE • MONEY SYSTEMS</text>
+<text x="68" y="148" fill="#f1ecdf" font-family="Georgia,serif" font-size="43" font-weight="700">When income changes,</text>
+<text x="68" y="202" fill="#f1ecdf" font-family="Georgia,serif" font-size="43" font-weight="700">keep the plan steady.</text>
+<text x="70" y="244" fill="#a9aaa5" font-family="Arial,sans-serif" font-size="18">A practical framework for variable pay and uneven months</text>
+
+<g transform="translate(68 300)">
+  <rect width="245" height="210" rx="12" fill="#111719" stroke="#c7a66a" stroke-opacity=".55"/>
+  <circle cx="42" cy="42" r="22" fill="#c7a66a" fill-opacity=".15" stroke="#c7a66a"/>
+  <text x="42" y="50" text-anchor="middle" fill="#f2d697" font-family="Arial,sans-serif" font-size="21" font-weight="700">1</text>
+  <path d="M30 115H65M30 130H88M30 145H75" stroke="#d8d0c1" stroke-width="5" stroke-linecap="round" opacity=".65"/>
+  <rect x="145" y="102" width="22" height="48" rx="3" fill="#8d7246"/>
+  <rect x="175" y="82" width="22" height="68" rx="3" fill="#b58b4f"/>
+  <rect x="205" y="58" width="22" height="92" rx="3" fill="url(#gold)"/>
+  <text x="28" y="178" fill="#f2eee6" font-family="Arial,sans-serif" font-size="18" font-weight="700">Track net income</text>
+  <text x="28" y="199" fill="#a9aaa5" font-family="Arial,sans-serif" font-size="13">Review the last 6 months</text>
+</g>
+<path d="M324 405H345" stroke="#c7a66a" stroke-width="3" stroke-linecap="round"/><path d="M338 397L346 405L338 413" fill="none" stroke="#c7a66a" stroke-width="3"/>
+<g transform="translate(355 300)">
+  <rect width="245" height="210" rx="12" fill="#111719" stroke="#c7a66a" stroke-opacity=".55"/>
+  <circle cx="42" cy="42" r="22" fill="#c7a66a" fill-opacity=".15" stroke="#c7a66a"/>
+  <text x="42" y="50" text-anchor="middle" fill="#f2d697" font-family="Arial,sans-serif" font-size="21" font-weight="700">2</text>
+  <path d="M30 119H215" stroke="#6b6d68" stroke-width="2"/>
+  <rect x="45" y="83" width="155" height="36" rx="5" fill="#c7a66a" fill-opacity=".18" stroke="#c7a66a"/>
+  <path d="M55 101H190" stroke="#e9cf91" stroke-width="4" stroke-linecap="round"/>
+  <text x="28" y="178" fill="#f2eee6" font-family="Arial,sans-serif" font-size="18" font-weight="700">Set a baseline</text>
+  <text x="28" y="199" fill="#a9aaa5" font-family="Arial,sans-serif" font-size="13">Build around a cautious month</text>
+</g>
+<path d="M611 405H632" stroke="#c7a66a" stroke-width="3" stroke-linecap="round"/><path d="M625 397L633 405L625 413" fill="none" stroke="#c7a66a" stroke-width="3"/>
+<g transform="translate(642 300)">
+  <rect width="245" height="210" rx="12" fill="#111719" stroke="#c7a66a" stroke-opacity=".55"/>
+  <circle cx="42" cy="42" r="22" fill="#c7a66a" fill-opacity=".15" stroke="#c7a66a"/>
+  <text x="42" y="50" text-anchor="middle" fill="#f2d697" font-family="Arial,sans-serif" font-size="21" font-weight="700">3</text>
+  <path d="M80 84H165L155 145H90Z" fill="#c7a66a" fill-opacity=".17" stroke="#c7a66a" stroke-width="2"/>
+  <path d="M92 115H153" stroke="#e9cf91" stroke-width="5" stroke-linecap="round"/>
+  <path d="M122 67V104M110 92L122 104L134 92" fill="none" stroke="#e9cf91" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="28" y="178" fill="#f2eee6" font-family="Arial,sans-serif" font-size="18" font-weight="700">Build a buffer</text>
+  <text x="28" y="199" fill="#a9aaa5" font-family="Arial,sans-serif" font-size="13">Save more in stronger months</text>
+</g>
+<path d="M898 405H919" stroke="#c7a66a" stroke-width="3" stroke-linecap="round"/><path d="M912 397L920 405L912 413" fill="none" stroke="#c7a66a" stroke-width="3"/>
+<g transform="translate(929 300)">
+  <rect width="203" height="210" rx="12" fill="#111719" stroke="#c7a66a" stroke-opacity=".55"/>
+  <circle cx="42" cy="42" r="22" fill="#c7a66a" fill-opacity=".15" stroke="#c7a66a"/>
+  <text x="42" y="50" text-anchor="middle" fill="#f2d697" font-family="Arial,sans-serif" font-size="21" font-weight="700">4</text>
+  <path d="M64 95C92 68 112 125 140 96" fill="none" stroke="#e9cf91" stroke-width="4" stroke-linecap="round"/>
+  <path d="M129 86L141 96L126 101" fill="none" stroke="#e9cf91" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="25" y="178" fill="#f2eee6" font-family="Arial,sans-serif" font-size="18" font-weight="700">Smooth low months</text>
+  <text x="25" y="199" fill="#a9aaa5" font-family="Arial,sans-serif" font-size="13">Use the buffer deliberately</text>
+</g>
+<text x="68" y="602" fill="#c7a66a" font-family="Arial,sans-serif" font-size="15" font-weight="700" letter-spacing="2">RECEIVED INCOME  →  BASELINE PLAN  →  CASH BUFFER  →  REGULAR REVIEW</text>
+<text x="68" y="638" fill="#777b78" font-family="Arial,sans-serif" font-size="12">Illustrative educational framework. Your baseline should reflect your own net income and essential costs.</text>
+</svg>
