@@ -13,7 +13,8 @@ document.querySelectorAll('a[href="https://luffy11223345.systeme.io/system"]').f
   if(!article) return;
 
   const related={
-    'article-budget-irregular-income.html':[['Zero-Based Budgeting','article-zero-based-budgeting.html'],['Sinking Funds','article-sinking-funds.html'],['Your Emergency Fund','article-emergency-fund.html'],['Pay Yourself First','article-pay-yourself-first.html']],
+    'article-budget-irregular-income.html':[['Cash Flow Calendar','article-cash-flow-calendar.html'],['Zero-Based Budgeting','article-zero-based-budgeting.html'],['Sinking Funds','article-sinking-funds.html'],['Your Emergency Fund','article-emergency-fund.html']],
+    'article-cash-flow-calendar.html':[['Budgeting With Irregular Income','article-budget-irregular-income.html'],['Sinking Funds','article-sinking-funds.html'],['Zero-Based Budgeting','article-zero-based-budgeting.html'],['Pay Yourself First','article-pay-yourself-first.html']],
     'article-high-yield-savings-account.html':[['Sinking Funds','article-sinking-funds.html'],['Your Emergency Fund','article-emergency-fund.html'],['Zero-Based Budgeting','article-zero-based-budgeting.html']],
     'article-sinking-funds.html':[['High-Yield Savings Accounts','article-high-yield-savings-account.html'],['Budgeting With Irregular Income','article-budget-irregular-income.html'],['Your Emergency Fund','article-emergency-fund.html']],
     'article-zero-based-budgeting.html':[['The 50/30/20 Rule','article-50-30-20.html'],['Budgeting With Irregular Income','article-budget-irregular-income.html'],['Sinking Funds','article-sinking-funds.html']],
