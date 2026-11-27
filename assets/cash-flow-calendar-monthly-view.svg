@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+<title id="title">A monthly cash flow calendar for bills and income</title>
+<desc id="desc">A four-week calendar marks income on days 2, 10, and 24, and bills and planned expenses on days 3, 5, 7, 11, 12, 14, 17, 20, 26, 28, and 30.</desc>
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#111719"/><stop offset="1" stop-color="#07090b"/></linearGradient>
+<linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f2d697"/><stop offset="1" stop-color="#a77c3c"/></linearGradient>
+</defs>
+<rect width="1200" height="675" fill="url(#bg)"/>
+<circle cx="1090" cy="25" r="250" fill="#c7a66a" opacity=".055"/>
+<text x="66" y="72" fill="#c7a66a" font-family="Arial,sans-serif" font-size="17" font-weight="700" letter-spacing="4">THE WEALTH SAGE • CASH FLOW PLANNING</text>
+<text x="66" y="132" fill="#f1ecdf" font-family="Georgia,serif" font-size="43" font-weight="700">Know what arrives — and when.</text>
+<text x="68" y="171" fill="#a9aaa5" font-family="Arial,sans-serif" font-size="17">A bill calendar makes the timing visible before the money leaves.</text>
+
+<g transform="translate(65 217)">
+<rect width="1070" height="340" rx="13" fill="#0d1214" stroke="#c7a66a" stroke-opacity=".45"/>
+<rect width="1070" height="52" rx="13" fill="#171d1e"/>
+<path d="M0 52H1070" stroke="#c7a66a" stroke-opacity=".25"/>
+<g fill="#d8c99f" font-family="Arial,sans-serif" font-size="15" font-weight="700" letter-spacing="1">
+<text x="32" y="33">MON</text><text x="185" y="33">TUE</text><text x="338" y="33">WED</text><text x="491" y="33">THU</text><text x="644" y="33">FRI</text><text x="797" y="33">SAT</text><text x="950" y="33">SUN</text>
+</g>
+<g stroke="#303735" stroke-width="1">
+<path d="M153 52V340M306 52V340M459 52V340M612 52V340M765 52V340M918 52V340"/>
+<path d="M0 124H1070M0 196H1070M0 268H1070"/>
+</g>
+<g font-family="Arial,sans-serif" font-size="14" fill="#858b85">
+<text x="19" y="76">1</text><text x="172" y="76">2</text><text x="325" y="76">3</text><text x="478" y="76">4</text><text x="631" y="76">5</text><text x="784" y="76">6</text><text x="937" y="76">7</text>
+<text x="19" y="148">8</text><text x="172" y="148">9</text><text x="325" y="148">10</text><text x="478" y="148">11</text><text x="631" y="148">12</text><text x="784" y="148">13</text><text x="937" y="148">14</text>
+<text x="19" y="220">15</text><text x="172" y="220">16</text><text x="325" y="220">17</text><text x="478" y="220">18</text><text x="631" y="220">19</text><text x="784" y="220">20</text><text x="937" y="220">21</text>
+<text x="19" y="292">22</text><text x="172" y="292">23</text><text x="325" y="292">24</text><text x="478" y="292">25</text><text x="631" y="292">26</text><text x="784" y="292">27</text><text x="937" y="292">28–30</text>
+</g>
+<g font-family="Arial,sans-serif" font-size="11" font-weight="700">
+<rect x="165" y="83" width="126" height="26" rx="6" fill="#c7a66a" fill-opacity=".18" stroke="#c7a66a"/><text x="228" y="100" text-anchor="middle" fill="#efd69c">+ INCOME</text>
+<rect x="318" y="83" width="128" height="26" rx="6" fill="#7c6750" fill-opacity=".22" stroke="#947850"/><text x="382" y="100" text-anchor="middle" fill="#e5d7bd">− RENT</text>
+<rect x="624" y="83" width="124" height="26" rx="6" fill="#7c6750" fill-opacity=".22" stroke="#947850"/><text x="686" y="100" text-anchor="middle" fill="#e5d7bd">− GROCERIES</text>
+<rect x="930" y="83" width="124" height="26" rx="6" fill="#7c6750" fill-opacity=".22" stroke="#947850"/><text x="992" y="100" text-anchor="middle" fill="#e5d7bd">− UTILITIES</text>
+
+<rect x="318" y="155" width="128" height="26" rx="6" fill="#c7a66a" fill-opacity=".18" stroke="#c7a66a"/><text x="382" y="172" text-anchor="middle" fill="#efd69c">+ PAYDAY</text>
+<rect x="471" y="155" width="130" height="26" rx="6" fill="#7c6750" fill-opacity=".22" stroke="#947850"/><text x="536" y="172" text-anchor="middle" fill="#e5d7bd">− PHONE</text>
+<rect x="624" y="155" width="126" height="26" rx="6" fill="#7c6750" fill-opacity=".22" stroke="#947850"/><text x="687" y="172" text-anchor="middle" fill="#e5d7bd">− TRANSPORT</text>
+<rect x="930" y="155" width="124" height="26" rx="6" fill="#7c6750" fill-opacity=".22" stroke="#947850"/><text x="992" y="172" text-anchor="middle" fill="#e5d7bd">− INSURANCE</text>
+
+<rect x="318" y="227" width="128" height="26" rx="6" fill="#7c6750" fill-opacity=".22" stroke="#947850"/><text x="382" y="244" text-anchor="middle" fill="#e5d7bd">− GROCERIES</text>
+<rect x="777" y="227" width="128" height="26" rx="6" fill="#7c6750" fill-opacity=".22" stroke="#947850"/><text x="841" y="244" text-anchor="middle" fill="#e5d7bd">− INTERNET</text>
+
+<rect x="318" y="299" width="128" height="26" rx="6" fill="#c7a66a" fill-opacity=".18" stroke="#c7a66a"/><text x="382" y="316" text-anchor="middle" fill="#efd69c">+ PAYMENT</text>
+<rect x="624" y="299" width="126" height="26" rx="6" fill="#7c6750" fill-opacity=".22" stroke="#947850"/><text x="687" y="316" text-anchor="middle" fill="#e5d7bd">− WATER</text>
+<rect x="930" y="299" width="124" height="26" rx="6" fill="#7c6750" fill-opacity=".22" stroke="#947850"/><text x="992" y="316" text-anchor="middle" fill="#e5d7bd">− PLANNED</text>
+</g>
+</g>
+<g font-family="Arial,sans-serif" font-size="13" font-weight="700">
+<circle cx="78" cy="606" r="7" fill="#c7a66a"/><text x="96" y="611" fill="#d9d0bd">Income received</text>
+<circle cx="290" cy="606" r="7" fill="#947850"/><text x="308" y="611" fill="#d9d0bd">Bills and spending</text>
+<text x="1132" y="611" text-anchor="end" fill="#c7a66a" font-size="12" letter-spacing="1">CHECK IT WEEKLY</text>
+<text x="66" y="647" fill="#7f8580" font-size="12" font-weight="400">Illustrative calendar only. Replace each date and amount with your actual payment and due dates.</text>
+</g>
+</svg>
